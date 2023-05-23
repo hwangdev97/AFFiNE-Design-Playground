@@ -80,7 +80,7 @@
   animation-name: split; /* 使用 move 序列 */
   animation-duration: 1.5s; 
   animation-timing-function: ease-in-out; /* 缓动函数为 ease-in-out */
-  animation-iteration-count: 3;
+  animation-iteration-count: 1;
 }
 .pageTwoGooey {
   background-color: var(--page-color);
@@ -94,7 +94,7 @@
   animation-name: move; /* 使用 move 序列 */
   animation-duration: 2s; /* 持续时间为 2 秒 */
   animation-timing-function: ease-in-out; /* 缓动函数为 ease-in-out */
-  animation-iteration-count: 3;
+  animation-iteration-count: 1;
 }
 
 .pageTwoGooey2 {
@@ -109,7 +109,7 @@
   animation-name: move; /* 使用 move 序列 */
   animation-duration: 2s; /* 持续时间为 2 秒 */
   animation-timing-function: ease-in-out; /* 缓动函数为 ease-in-out */
-  animation-iteration-count: 3;
+  animation-iteration-count: 1;
 }
 
 .pageTwoGooey3 {
@@ -124,7 +124,7 @@
   animation-name: move; /* 使用 move 序列 */
   animation-duration: 2s; /* 持续时间为 2 秒 */
   animation-timing-function: ease-in-out; /* 缓动函数为 ease-in-out */
-  animation-iteration-count: 3;
+  animation-iteration-count: 1;
 }
 
 .gooey {
