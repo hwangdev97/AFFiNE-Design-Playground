@@ -1,6 +1,6 @@
 <template>
   <div id="playground">
-    <UpdateButtonDemo />
+    <SplitPage />
   </div>
 </template>
 
