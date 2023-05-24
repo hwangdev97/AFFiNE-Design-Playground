@@ -1,6 +1,6 @@
 <template>
   <div id="playground">
-    <SplitPage />
+    <EdgelessShape />
   </div>
 </template>
 
