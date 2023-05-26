@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+
 const colors: Ref<string[]> = ref([
   "#FFF188",
   "#FFC107",
@@ -8,42 +9,116 @@ const colors: Ref<string[]> = ref([
   "#9E9E9E",
   "#607D8B",
 ]);
+const pickedColor: Ref<string> = ref("#FFF188");
 
 const el = ref<HTMLElement | null>(null);
+const elNext = ref<HTMLElement | null>(null);
 const onMove = ref(false);
-const halfWidth: number = useWindowSize().width.value / 2 - 64;
-const halfHight: number = useWindowSize().height.value / 2 - 64;
-const { x, y, style } = useDraggable(el, {
-  initialValue: { x: halfWidth, y: halfHight },
-  onMove: () => {
-    onMove.value = true;
-  },
-  onEnd: (position, e) => {
-    onMove.value = false;
-    console.log("x =>", position.x);
-    if (
-      Math.abs(position.x - halfWidth) < 200 &&
-      Math.abs(position.y - halfHight) < 200
-    ) {
-      position.x = halfWidth;
-      position.y = halfHight;
-    }
-  },
+const showFirst = ref(true);
+const showNext = ref(false);
+
+const firstStyle = ref({
+  top: "calc(50% - 3rem)",
+  left: "calc(50% - 3rem)",
+});
+const nextStyle = ref({
+  top: "calc(50% - 3rem)",
+  left: "calc(50% - 3rem)",
 });
 
-const pickedColor: Ref<string> = ref("#FFF188");
+const halfWidth: number = useWindowSize().width.value / 2 - 48; // 3 * 16
+const halfHight: number = useWindowSize().height.value / 2 - 48;
+const firstPosition = { x: halfWidth, y: halfHight };
+
+const onFirstDraggableEnd = (position: { x: number; y: number }, e: PointerEvent) => {
+  onMove.value = false;
+  console.log("x =>", position.x);
+  if (
+    Math.abs(position.x - halfWidth) < 200 &&
+    Math.abs(position.y - halfHight) < 200
+  ) {
+    resetFirstPosition();
+  } else {
+    showNext.value = true;
+  }
+
+  resetNextPosition();
+};
+
+const onNextDraggableEnd = (position: { x: number; y: number }, e: PointerEvent) => {
+  if (
+    Math.abs(position.x - halfWidth) < 200 &&
+    Math.abs(position.y - halfHight) < 200
+  ) {
+    resetNextPosition();
+  } else {
+    showFirst.value = true;
+  }
+  onMove.value = false;
+  resetFirstPosition();
+};
+
+const {} = useDraggable(el, {
+  initialValue: firstPosition,
+  onStart: () => {
+    showNext.value = false;
+    console.log("onStart 1");
+  },
+  onMove: (position) => {
+    onMove.value = true;
+
+    firstStyle.value = {
+      top: `${position.y}px`,
+      left: `${position.x}px`,
+    };
+  },
+  onEnd: onFirstDraggableEnd,
+});
+
+const {} = useDraggable(elNext, {
+  initialValue: firstPosition,
+  onStart: () => {
+    showFirst.value = false;
+    console.log("onStart 2");
+  },
+  onMove: (position) => {
+    onMove.value = true;
+    nextStyle.value = {
+      top: `${position.y}px`,
+      left: `${position.x}px`,
+    };
+  },
+  onEnd: onNextDraggableEnd,
+});
+
+const resetFirstPosition = () => {
+  firstStyle.value = {
+    top: `${firstPosition.y}px`,
+    left: `${firstPosition.x}px`,
+  };
+};
+
+const resetNextPosition = () => {
+  nextStyle.value = {
+    top: `${firstPosition.y}px`,
+    left: `${firstPosition.x}px`,
+  };
+};
 </script>
+
 <template>
   <div class="layout">
     <h1>Edgeless Shape Button Demo</h1>
-    <h1>at {{ x }}, {{ y }}</h1>
+    <!-- <h1>at {{ x }}, {{ y }}</h1> -->
+    <section class="toolbar">
     <section class="shapeTypeButton">
       <!-- Rectangle -->
 
       <svg
-        class="shapeBase rectangle"
+        v-if="showFirst"
+        class="shapeBase rectangleNext"
         ref="el"
-        :style="style"
+        :style="firstStyle"
         width="45"
         height="34"
         viewBox="0 0 45 34"
@@ -61,6 +136,30 @@ const pickedColor: Ref<string> = ref("#FFF188");
           stroke-opacity="0.1"
         />
       </svg>
+
+      <svg
+        v-if="showNext"
+        ref="elNext"
+        :style="nextStyle"
+        class="shapeBase rectangleNext"
+        width="45"
+        height="34"
+        viewBox="0 0 45 34"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect width="45" height="33.75" rx="1.5" :fill="pickedColor" />
+        <rect
+          x="0.5"
+          y="0.5"
+          width="44"
+          height="32.75"
+          rx="1"
+          stroke="black"
+          stroke-opacity="0.1"
+        />
+      </svg>
+
       <!-- Circle -->
       <svg
         class="shapeBase circle"
@@ -93,6 +192,7 @@ const pickedColor: Ref<string> = ref("#FFF188");
           stroke-opacity="0.1"
         />
       </svg>
+    </section>
     </section>
     <section class="colorPickerLayout">
       <span
@@ -150,16 +250,19 @@ h1 {
 .colorPickerItem:hover {
   transform: scale(1.3);
 }
-
-.shapeTypeButton {
-  width: 24rem;
-  height: 18rem;
+.toolbar {
+  width: 25%;
+  height: 12rem;
   margin: 32px auto;
 
   border: 1px solid rgba(255, 255, 255, 1);
-  border-radius: 12px;
-  background-color: rgb(237, 237, 237);
+  border-radius: 6rem;
+  background-color: rgb(255, 255, 255);
   box-shadow: 0px 0px 12px rgba(66, 65, 73, 0.15);
+}
+
+.shapeTypeButton {
+  width: 180px;
 }
 
 .shapeBase {
@@ -176,24 +279,49 @@ h1 {
 
 .rectangle {
   position: absolute;
-  top: calc(50% - 4rem);
-  left: calc(50% - 4rem);
   z-index: 3;
+  animation-name: enterFromBottom;
+  animation-duration: 0.25s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
 }
 
 .circle {
   position: absolute;
-  top: calc(50% - 5rem);
+  top: calc(50% - 4rem);
   left: calc(50% - 0.75rem);
-  transform: scale(0.8);
+  transform: scale(0.8) rotate(30deg);
+
   z-index: 2;
 }
 
 .triangle {
   position: absolute;
-  top: calc(50% - 6rem);
+  top: calc(50% - 4.5rem);
   left: calc(50% - 7rem);
-  transform: scale(0.8);
+  transform: scale(0.8) rotate(-15deg);
   z-index: 1;
+}
+
+/*  */
+.rectangleNext {
+  position: absolute;
+
+  z-index: 3;
+  animation-name: enterFromBottom;
+  animation-duration: 0.25s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+
+@keyframes enterFromBottom {
+  0% {
+    top: calc(50% - 1rem);
+    transform: scale(0.7) translateY(80%);
+  }
+  100% {
+    top: calc(50% - 3rem);
+    transform: scale(1) translateY(0%);
+  }
 }
 </style>
