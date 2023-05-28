@@ -3,18 +3,19 @@ const showInstall: Ref<Boolean> = ref(false);
 </script>
 
 <template>
-  <div class="layout">
+  <div class="updateButtonViewLayout">
     <div class="sideBar">
       <div class="buttonGroup">
-        <button class="baseButton updateButton" 
-        @mouseover="showInstall = true"
-        @mouseleave="showInstall = false"
+        <button
+          class="baseButton updateButton"
+          @mouseover="showInstall = true"
+          @mouseleave="showInstall = false"
         >
           <div class="particles" aria-hidden="true"></div>
           <span class="halo" aria-hidden="true"></span>
 
           <div v-if="showInstall" class="installLabel">
-            <img class="icon" src="../assets/rotate-ccw.svg" />
+            <img class="icon" src="../../assets/rotate-ccw.svg" />
             <span class="label2">Restart to install update</span>
           </div>
 
@@ -25,7 +26,7 @@ const showInstall: Ref<Boolean> = ref(false);
         </button>
 
         <button class="baseButton addPageButton">
-          <img class="icon" src="../assets/Plus.svg" alt="add" />
+          <img class="icon" src="../../assets/Plus.svg" alt="add" />
           <span>Add page</span>
         </button>
       </div>
@@ -35,7 +36,7 @@ const showInstall: Ref<Boolean> = ref(false);
 
 <style>
 :root {
-  --svg-animation: url("../assets/dotAnimation.svg");
+  --svg-animation: url("../../assets/dotAnimation.svg");
   --svg-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.25' numOctaves='10' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 button {
@@ -43,7 +44,7 @@ button {
   margin: 0px;
 }
 
-.layout {
+.updateButtonViewLayout {
   margin: 0px;
   padding: 0px;
   background: #efefef;
@@ -115,16 +116,13 @@ button {
   padding-left: 8px;
 }
 
-.updateButton  {
+.updateButton {
   width: 100%;
   position: relative;
   display: flex;
   justify-content: space-between;
   padding-right: 8px;
 }
-
-
- 
 
 /* circle */
 .updateButton::before {
@@ -149,7 +147,6 @@ button {
   opacity: 0;
   transition: 0.3s ease-in-out;
 }
-
 
 .addPageButton {
   display: flex;
@@ -200,12 +197,17 @@ button {
 
 /* dot animation */
 .particles {
-
   background-image: var(--svg-animation), var(--svg-animation);
   background-repeat: no-repeat, repeat;
   background-position: center, center top 100%;
   background-size: 100%, 130%;
-  -webkit-mask-image: linear-gradient(to top, transparent,  black,  black, transparent);
+  -webkit-mask-image: linear-gradient(
+    to top,
+    transparent,
+    black,
+    black,
+    transparent
+  );
   width: 100%;
   height: 100%;
   position: absolute;
@@ -231,13 +233,9 @@ button {
   will-change: filter;
 }
 
-
-
- 
-
 .installLabel {
   display: flex;
-  justify-content:flex-start ;
+  justify-content: flex-start;
   align-items: center;
   padding-left: 8px;
 }
@@ -251,5 +249,4 @@ button {
 .label2 {
   padding: 0;
 }
-
 </style>

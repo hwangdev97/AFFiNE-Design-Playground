@@ -1,10 +1,15 @@
 <template>
   <div id="playground">
-    <EdgelessShape />
+    <NuxtPage />
   </div>
 </template>
 
 <style>
+:root {
+  --page-color: rgb(255, 255, 255);
+  /* animation */
+  
+}
 #playground {
   margin: 0px;
   padding: 0px;
@@ -12,11 +17,9 @@
   height: 100vh;
 }
 
- 
 body {
   margin: 0px;
   padding: 0px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-  
 </style>

@@ -1,7 +1,7 @@
 <script lang="ts" setup></script>
 <template>
   <div class="background">
-    <div class="layout">
+    <div class="splitPage">
       <!-- sidebar -->
       <section class="sidebar"></section>
       <section class="pageLayout">
@@ -21,17 +21,15 @@
   </div>
 </template>
 <style>
-:root {
-  --page-color: rgb(255, 255, 255);
-}
+
 
 .background {
   width: 100%;
   height: 100%;
-  background-image: url("../public/WStW2U7iLPY-full.jpeg");
+  background-image: url("../../public/WStW2U7iLPY-full.jpeg");
   background-size: cover;
 }
-.layout {
+.splitPage {
   width: 80%;
   height: 80%;
   position: absolute;
@@ -48,7 +46,7 @@
 .sidebar {
   width: 20%;
   height: 100%;
-  background-image: url("../public/Sidebar.png");
+  background-image: url("../../public/Sidebar.png");
   background-size: contain;
   background-repeat: no-repeat;
 }

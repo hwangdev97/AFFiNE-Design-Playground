@@ -107,7 +107,7 @@ const resetNextPosition = () => {
 </script>
 
 <template>
-  <div class="layout">
+  <div class="edgelessShape">
     <h1>Edgeless Shape Button Demo</h1>
     <!-- <h1>at {{ x }}, {{ y }}</h1> -->
     <section class="toolbar">
@@ -208,7 +208,7 @@ const resetNextPosition = () => {
     </section>
   </div>
 </template>
-<style>
+<style scoped>
 h1 {
   font: 2em sans-serif;
   color: rgb(184, 184, 184);
@@ -216,7 +216,7 @@ h1 {
   user-select: none;
 }
 
-.layout {
+.edgelessShape {
   width: 100%;
   height: 100%;
   background-color: rgb(246, 246, 246);
