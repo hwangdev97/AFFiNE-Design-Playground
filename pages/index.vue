@@ -24,10 +24,10 @@ const prototypeList = ref<ProtoTypeItem[]>([
   <div class="layout">
     <section class="title">
       <h1>
-        Some code snippet for <span class="affineLogo"> </span> written by
+        Some code/craft snippet for <span class="affineLogo"> </span> written by
         <span class="hwangLogo"> </span>
       </h1>
-      <h2>Try AFFiNE</h2>
+      <h2><a href="https://affine.pro" >Try AFFiNE</a></h2>
     </section>
 
     <div class="prototypeGridLayout">
@@ -42,12 +42,15 @@ const prototypeList = ref<ProtoTypeItem[]>([
   flex-direction: column;
   height: 100vh;
   width: 100vw;
+  background: #ffffff;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.015) .1em, transparent .1em), linear-gradient(90deg, rgba(0, 0, 0, 0.015) .1em, transparent .1em);
+  background-size: 1rem 1rem;
 }
 
 .prototypeGridLayout {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 40px;
+  grid-gap: 20px;
   grid-template-rows: masonry;
   padding: 3rem 6rem;
 }
@@ -67,7 +70,7 @@ const prototypeList = ref<ProtoTypeItem[]>([
   text-align: center;
 }
 
-.title h2 {
+.title h2, a {
   display: flex;
   align-items: center;
   color: #585858;

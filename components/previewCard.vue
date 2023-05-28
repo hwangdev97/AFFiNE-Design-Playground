@@ -5,7 +5,7 @@ defineProps<{
 </script>
 <template>
   <div class="previewCardLayout">
-    <video class="previewCardVideo" :src="item.video"></video>
+    <video class="previewCardVideo" :src="item.video" autoplay muted loop></video>
     <div class="previewCardMeta">
       <div class="previewCardInfo">
         <div class="previewCardTitle">{{ item.title }}</div>
@@ -29,6 +29,7 @@ defineProps<{
   margin: 6px;
   overflow: hidden;
   border: 1px solid rgb(222, 222, 222);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 
@@ -37,6 +38,10 @@ defineProps<{
   color: rgb(184, 184, 184);
   text-align: left;
   user-select: none;
+}
+
+.previewCardTitle:hover .previewCardDescription {
+  color: rgb(97, 97, 97);
 }
 
 .previewCardDescription {
@@ -68,6 +73,7 @@ defineProps<{
   padding: 4px 10px;
   color: rgb(117, 117, 117);
   text-decoration: none;
+  text-transform: uppercase;
   transition: all 0.2s ease-in-out;
 }
 
