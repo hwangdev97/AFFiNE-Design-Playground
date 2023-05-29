@@ -57,6 +57,7 @@ const prototypeList = ref<ProtoTypeItem[]>([
   grid-gap: 20px;
   grid-template-rows: masonry;
   padding: 3rem 6rem;
+    
 }
 
 .title {
@@ -104,7 +105,7 @@ a {
   margin: 0 0.5rem;
 }
 
-@media screen and (max-width: 1100px) { 
+@media screen and (max-width: 1100px) {
   .prototypeGridLayout {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -115,7 +116,7 @@ a {
   .title {
     display: flex;
     justify-content: space-between;
-    padding: 6rem 3rem 1rem 3rem ;
+    padding: 6rem 3rem 1rem 3rem;
     user-select: none;
   }
 }
@@ -128,8 +129,9 @@ a {
   .prototypeGridLayout {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-gap: 10px;
-    padding: 1rem 2rem;
+    grid-gap: 1.5rem;
+    padding: 1rem 0.75rem;
+    
   }
 
   .title {

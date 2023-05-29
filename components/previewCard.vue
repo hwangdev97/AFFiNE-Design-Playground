@@ -6,15 +6,17 @@ defineProps<{
 <template>
   <NuxtLink :to="item.route">
     <div class="previewCardLayout">
+      <!-- playsinline -->
       <video
         class="previewCardVideo"
         :src="item.video"
         autoplay
+        playsinline
         muted
         loop
       ></video>
       <div class="previewCardMeta">
-        <div >
+        <div>
           <div class="previewCardTitle">{{ item.title }}</div>
           <div class="previewCardDescription">{{ item.subscribe }}</div>
         </div>
@@ -29,15 +31,18 @@ defineProps<{
 <style scoped>
 a {
   height: auto;
+  display: flex;
+  flex-wrap: wrap;
   text-decoration: none;
 }
 
 .previewCardLayout {
   height: 100%;
   min-width: 300px;
+  flex: 1;
   display: flex;
+
   flex-direction: column;
-  justify-items: top;
   background-color: rgb(255, 255, 255);
   border-radius: 8px;
   margin: 6px;
@@ -102,7 +107,6 @@ a {
 
 @keyframes previewCardAppear {
   0% {
-     
     transform: scale(0.85);
   }
   100% {
