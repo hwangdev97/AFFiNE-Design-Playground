@@ -4,43 +4,61 @@ defineProps<{
 }>();
 </script>
 <template>
-  <div class="previewCardLayout">
-    <video class="previewCardVideo" :src="item.video" autoplay muted loop></video>
-    <div class="previewCardMeta">
-      <div class="previewCardInfo">
-        <div class="previewCardTitle">{{ item.title }}</div>
-        <div class="previewCardDescription">{{ item.subscribe }}</div>
-      </div>
-      <div class="previewCardAction">
-        <NuxtLink class="previewCardButton" :to="item.route">view</NuxtLink>
+  <NuxtLink :to="item.route">
+    <div class="previewCardLayout">
+      <video
+        class="previewCardVideo"
+        :src="item.video"
+        autoplay
+        muted
+        loop
+      ></video>
+      <div class="previewCardMeta">
+        <div >
+          <div class="previewCardTitle">{{ item.title }}</div>
+          <div class="previewCardDescription">{{ item.subscribe }}</div>
+        </div>
+        <div class="previewCardAction">
+          <span class="previewCardButton">view </span>
+        </div>
       </div>
     </div>
-  </div>
+  </NuxtLink>
 </template>
 
 <style scoped>
-.previewCardLayout {
+a {
   height: auto;
+  text-decoration: none;
+}
+
+.previewCardLayout {
+  height: 100%;
   min-width: 300px;
   display: flex;
   flex-direction: column;
+  justify-items: top;
   background-color: rgb(255, 255, 255);
   border-radius: 8px;
   margin: 6px;
   overflow: hidden;
   border: 1px solid rgb(222, 222, 222);
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
 }
 
+.previewCardLayout:hover {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+}
 
 .previewCardTitle {
   font: 1.5rem;
-  color: rgb(184, 184, 184);
+  color: rgb(130, 130, 130);
   text-align: left;
   user-select: none;
 }
 
-.previewCardTitle:hover .previewCardDescription {
+.previewCardTitle:hover .previewCardDescription:hover {
   color: rgb(97, 97, 97);
 }
 

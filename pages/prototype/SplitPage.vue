@@ -1,28 +1,30 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import DetailLayout from "~/layout/DetailLayout.vue";
+</script>
 <template>
-  <div class="background">
-    <div class="splitPage">
-      <!-- sidebar -->
-      <section class="sidebar"></section>
-      <section class="pageLayout">
-        <!-- page1 -->
-        <section class="page1">
-          <span class="gooey"></span>
-        </section>
+  <DetailLayout>
+    <div class="background">
+      <div class="splitPage">
+        <!-- sidebar -->
+        <section class="sidebar"></section>
+        <section class="pageLayout">
+          <!-- page1 -->
+          <section class="page1">
+            <span class="gooey"></span>
+          </section>
 
-        <!-- page3 -->
-        <section class="page2">
-          <span class="gooey pageTwoGooey"></span>
-          <span class="gooey pageTwoGooey2"></span>
-          <span class="gooey pageTwoGooey3"></span>
+          <!-- page3 -->
+          <section class="page2">
+            <span class="gooey pageTwoGooey"></span>
+            <span class="gooey pageTwoGooey2"></span>
+            <span class="gooey pageTwoGooey3"></span>
+          </section>
         </section>
-      </section>
+      </div>
     </div>
-  </div>
+  </DetailLayout>
 </template>
 <style>
-
-
 .background {
   width: 100%;
   height: 100%;
@@ -76,7 +78,7 @@
   background-color: var(--page-color);
   filter: blur(6px);
   animation-name: split; /* 使用 move 序列 */
-  animation-duration: 1.5s; 
+  animation-duration: 1.5s;
   animation-timing-function: ease-in-out; /* 缓动函数为 ease-in-out */
   animation-iteration-count: 1;
 }
