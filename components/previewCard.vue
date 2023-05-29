@@ -45,6 +45,7 @@ a {
   border: 1px solid rgb(222, 222, 222);
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
   transition: all 0.2s ease-in-out;
+  animation: previewCardAppear 860ms cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 .previewCardLayout:hover {
@@ -97,5 +98,15 @@ a {
 
 .previewCardButton:hover {
   background-color: #e6e6e6;
+}
+
+@keyframes previewCardAppear {
+  0% {
+     
+    transform: scale(0.85);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 </style>
