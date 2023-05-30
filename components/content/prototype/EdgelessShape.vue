@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import DetailLayout from "~/layout/DetailLayout.vue";
-
 const colors: Ref<string[]> = ref([
   "#FFF188",
   "#FFC107",
@@ -114,114 +112,112 @@ const resetNextPosition = () => {
 </script>
 
 <template>
-  <DetailLayout>
-    <div class="edgelessShape">
-      <h1>Edgeless Shape Button Demo</h1>
-      <!-- <h1>at {{ x }}, {{ y }}</h1> -->
-      <section class="toolbar">
-        <section class="shapeTypeButton">
-          <!-- Rectangle -->
+  <div class="edgelessShape">
+    <h1>Edgeless Shape Button Demo</h1>
+    <!-- <h1>at {{ x }}, {{ y }}</h1> -->
+    <section class="toolbar">
+      <section class="shapeTypeButton">
+        <!-- Rectangle -->
 
-          <svg
-            v-if="showFirst"
-            class="shapeBase rectangleNext"
-            ref="el"
-            :style="firstStyle"
-            width="45"
-            height="34"
-            viewBox="0 0 45 34"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect width="45" height="33.75" rx="1.5" :fill="pickedColor" />
-            <rect
-              x="0.5"
-              y="0.5"
-              width="44"
-              height="32.75"
-              rx="1"
-              stroke="black"
-              stroke-opacity="0.1"
-            />
-          </svg>
+        <svg
+          v-if="showFirst"
+          class="shapeBase rectangleNext"
+          ref="el"
+          :style="firstStyle"
+          width="45"
+          height="34"
+          viewBox="0 0 45 34"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="45" height="33.75" rx="1.5" :fill="pickedColor" />
+          <rect
+            x="0.5"
+            y="0.5"
+            width="44"
+            height="32.75"
+            rx="1"
+            stroke="black"
+            stroke-opacity="0.1"
+          />
+        </svg>
 
-          <svg
-            v-if="showNext"
-            ref="elNext"
-            :style="nextStyle"
-            class="shapeBase rectangleNext"
-            width="45"
-            height="34"
-            viewBox="0 0 45 34"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect width="45" height="33.75" rx="1.5" :fill="pickedColor" />
-            <rect
-              x="0.5"
-              y="0.5"
-              width="44"
-              height="32.75"
-              rx="1"
-              stroke="black"
-              stroke-opacity="0.1"
-            />
-          </svg>
+        <svg
+          v-if="showNext"
+          ref="elNext"
+          :style="nextStyle"
+          class="shapeBase rectangleNext"
+          width="45"
+          height="34"
+          viewBox="0 0 45 34"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="45" height="33.75" rx="1.5" :fill="pickedColor" />
+          <rect
+            x="0.5"
+            y="0.5"
+            width="44"
+            height="32.75"
+            rx="1"
+            stroke="black"
+            stroke-opacity="0.1"
+          />
+        </svg>
 
-          <!-- Circle -->
-          <svg
-            class="shapeBase circle"
-            width="40"
-            height="40"
-            viewBox="0 0 40 40"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="20" cy="20" r="20" :fill="pickedColor" />
-            <circle
-              cx="20"
-              cy="20"
-              r="19.5"
-              stroke="black"
-              stroke-opacity="0.1"
-            />
-          </svg>
+        <!-- Circle -->
+        <svg
+          class="shapeBase circle"
+          width="40"
+          height="40"
+          viewBox="0 0 40 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="20" cy="20" r="20" :fill="pickedColor" />
+          <circle
+            cx="20"
+            cy="20"
+            r="19.5"
+            stroke="black"
+            stroke-opacity="0.1"
+          />
+        </svg>
 
-          <!-- Triangle -->
-          <svg
-            class="shapeBase triangle"
-            width="48"
-            height="41"
-            viewBox="0 0 48 41"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M22.701 1.25C23.2783 0.249999 24.7217 0.25 25.299 1.25L46.9497 38.75C47.527 39.75 46.8053 41 45.6506 41H2.34936C1.19466 41 0.472977 39.75 1.05033 38.75L22.701 1.25Z"
-              :fill="pickedColor"
-            />
-            <path
-              d="M24.866 1.5L46.5167 39C46.9016 39.6667 46.4204 40.5 45.6506 40.5H2.34936C1.57956 40.5 1.09844 39.6667 1.48334 39L23.134 1.5C23.5189 0.833333 24.4811 0.833333 24.866 1.5Z"
-              stroke="black"
-              stroke-opacity="0.1"
-            />
-          </svg>
-        </section>
+        <!-- Triangle -->
+        <svg
+          class="shapeBase triangle"
+          width="48"
+          height="41"
+          viewBox="0 0 48 41"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M22.701 1.25C23.2783 0.249999 24.7217 0.25 25.299 1.25L46.9497 38.75C47.527 39.75 46.8053 41 45.6506 41H2.34936C1.19466 41 0.472977 39.75 1.05033 38.75L22.701 1.25Z"
+            :fill="pickedColor"
+          />
+          <path
+            d="M24.866 1.5L46.5167 39C46.9016 39.6667 46.4204 40.5 45.6506 40.5H2.34936C1.57956 40.5 1.09844 39.6667 1.48334 39L23.134 1.5C23.5189 0.833333 24.4811 0.833333 24.866 1.5Z"
+            stroke="black"
+            stroke-opacity="0.1"
+          />
+        </svg>
       </section>
-      <section class="colorPickerLayout">
-        <span
-          :class="`colorPickerItem ${pickedColor === color ? 'selected' : ''}`"
-          v-for="color in colors"
-          :style="{
-            backgroundColor: color,
-            width: '2rem',
-            height: '2rem',
-          }"
-          @click="pickedColor = color"
-        ></span>
-      </section>
-    </div>
-  </DetailLayout>
+    </section>
+    <section class="colorPickerLayout">
+      <span
+        :class="`colorPickerItem ${pickedColor === color ? 'selected' : ''}`"
+        v-for="color in colors"
+        :style="{
+          backgroundColor: color,
+          width: '2rem',
+          height: '2rem',
+        }"
+        @click="pickedColor = color"
+      ></span>
+    </section>
+  </div>
 </template>
 <style scoped>
 h1 {

@@ -1,9 +1,8 @@
 <script lang="ts" setup></script>
 <template>
   <div class="detailLayout">
-    <main class="detailLayout">
-      <slot></slot>
-    </main>
+    <ContentDoc class="detailLayout" />
+
     <DetailToolBar />
   </div>
 </template>
