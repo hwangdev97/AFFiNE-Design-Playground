@@ -1,45 +1,38 @@
 <script lang="ts" setup>
-import DetailLayout from "~/layout/DetailLayout.vue";
 const showInstall: Ref<Boolean> = ref(false);
 </script>
 
 <template>
-  <DetailLayout>
-    <div class="updateButtonViewLayout">
-      <aside class="sideBar">
-        <div class="buttonGroup">
-          <button
-            class="baseButton updateButton"
-            @mouseover="showInstall = true"
-            @mouseleave="showInstall = false"
-            aria-label="Update button"
-          >
-            <div class="particles" aria-hidden="true"></div>
-            <span class="halo" aria-hidden="true"></span>
+  <div class="updateButtonViewLayout">
+    <aside class="sideBar">
+      <div class="buttonGroup">
+        <button
+          class="baseButton updateButton"
+          @mouseover="showInstall = true"
+          @mouseleave="showInstall = false"
+          aria-label="Update button"
+        >
+          <div class="particles" aria-hidden="true"></div>
+          <span class="halo" aria-hidden="true"></span>
 
-            <div v-if="showInstall" class="installLabel">
-              <img
-                class="icon"
-                src="../../assets/rotate-ccw.svg"
-                alt="Restart"
-              />
-              <span class="label2">Restart to install update</span>
-            </div>
+          <div v-if="showInstall" class="installLabel">
+            <img class="icon" src="../../assets/rotate-ccw.svg" alt="Restart" />
+            <span class="label2">Restart to install update</span>
+          </div>
 
-            <div v-else class="updateAvailable">
-              <span class="label">Update available </span>
-              <span class="versionInfo">Canary-v0.5.18 </span>
-            </div>
-          </button>
+          <div v-else class="updateAvailable">
+            <span class="label">Update available </span>
+            <span class="versionInfo">Canary-v0.5.18 </span>
+          </div>
+        </button>
 
-          <button class="baseButton addPageButton" aria-label="Add page button">
-            <img class="icon" src="../../assets/Plus.svg" alt="add" />
-            <span>Add page</span>
-          </button>
-        </div>
-      </aside>
-    </div>
-  </DetailLayout>
+        <button class="baseButton addPageButton" aria-label="Add page button">
+          <img class="icon" src="../../assets/Plus.svg" alt="add" />
+          <span>Add page</span>
+        </button>
+      </div>
+    </aside>
+  </div>
 </template>
 
 <style>

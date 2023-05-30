@@ -1,0 +1,5 @@
+---
+layout: detail
+---
+:SplitPage
+

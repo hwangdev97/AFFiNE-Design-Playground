@@ -1,28 +1,24 @@
-<script lang="ts" setup>
-import DetailLayout from "~/layout/DetailLayout.vue";
-</script>
+<script lang="ts" setup></script>
 <template>
-  <DetailLayout>
-    <div class="background">
-      <div class="splitPage">
-        <!-- sidebar -->
-        <section class="sidebar"></section>
-        <section class="pageLayout">
-          <!-- page1 -->
-          <section class="page1">
-            <span class="gooey"></span>
-          </section>
-
-          <!-- page3 -->
-          <section class="page2">
-            <span class="gooey pageTwoGooey"></span>
-            <span class="gooey pageTwoGooey2"></span>
-            <span class="gooey pageTwoGooey3"></span>
-          </section>
+  <div class="background">
+    <div class="splitPage">
+      <!-- sidebar -->
+      <section class="sidebar"></section>
+      <section class="pageLayout">
+        <!-- page1 -->
+        <section class="page1">
+          <span class="gooey"></span>
         </section>
-      </div>
+
+        <!-- page3 -->
+        <section class="page2">
+          <span class="gooey pageTwoGooey"></span>
+          <span class="gooey pageTwoGooey2"></span>
+          <span class="gooey pageTwoGooey3"></span>
+        </section>
+      </section>
     </div>
-  </DetailLayout>
+  </div>
 </template>
 <style>
 .background {
