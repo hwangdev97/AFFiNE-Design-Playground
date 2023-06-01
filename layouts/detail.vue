@@ -10,13 +10,12 @@ useContentHead(page);
 console.log(useRoute.name);
 </script>
 <template>
-  <div class="detailLayout">
-    <ContentDoc v-slot="{ doc }">
-      <ContentRenderer  class="detailLayout" :value="doc" />
+  <ContentDoc class="detailLayout" v-slot="{ doc }">
+    <ContentRenderer class="detailLayout" :value="doc" />
 
-      <DetailToolBar @showDialog="setIsOpen(true)" :title="doc.title" />
-    </ContentDoc>
-  </div>
+    <DetailToolBar @showDialog="setIsOpen(true)" :title="doc.title" />
+    <Dialog :isOpen="isOpen" @update:isOpen="setIsOpen(false)" />
+  </ContentDoc>
 </template>
 <style>
 .detailLayout {
