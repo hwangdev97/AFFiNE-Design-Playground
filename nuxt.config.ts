@@ -18,7 +18,6 @@ export default defineNuxtConfig({
   content: {
     documentDriven: true,
   },
-
   vite: {
     plugins: [
       Components({
@@ -27,4 +26,5 @@ export default defineNuxtConfig({
       Icons(),
     ],
   },
+  extends: '@nuxt-themes/typography',
 });

@@ -8,12 +8,12 @@ const props = defineProps({
 });
 </script>
 <template>
-  <transition name="dialog-fade dialog-slide">
-    <div
-      class="dialogLayout"
-      v-show="isOpen"
-      @click="$emit('update:isOpen', false)"
-    >
+  <div
+    class="dialogLayout"
+    v-show="isOpen"
+    @click="$emit('update:isOpen', false)"
+  >
+    <transition name="dialog-fade dialog-slide">
       <div class="dialogContent" @click.stop>
         <div class="dialogTitleBar">
           <h2>{{ title }}</h2>
@@ -21,12 +21,12 @@ const props = defineProps({
           <button @click="$emit('update:isOpen', false)">
             <i-fa6-solid-xmark />
           </button>
-
-          <slot></slot>
         </div>
+
+        <slot></slot>
       </div>
-    </div>
-  </transition>
+    </transition>
+  </div>
 </template>
 <style>
 .dialogLayout {
@@ -48,6 +48,7 @@ const props = defineProps({
 }
 .dialogContent {
   position: absolute;
+  max-width: 800px;
   right: 1vw;
   background-color: rgb(255, 255, 255);
   width: 45vw;
@@ -55,7 +56,6 @@ const props = defineProps({
   border-radius: 10px;
   border: 2px solid rgb(221, 221, 221);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 30px, rgba(0, 0, 0, 0.1) -3px 0px 20px;
-  padding: 24px;
 
   animation: dialogAppear 800ms cubic-bezier(0.36, -0.01, 0, 1.38);
 }
@@ -64,6 +64,7 @@ const props = defineProps({
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 24px;
 }
 
 .dialogTitleBar h2 {
@@ -105,7 +106,6 @@ const props = defineProps({
     transform: scale(1);
   }
 }
-
 
 /* 定义对话框出场动画 */
 .dialog-fade-enter-active,
@@ -163,6 +163,4 @@ const props = defineProps({
     transform: translateX(100%);
   }
 }
-
-
 </style>

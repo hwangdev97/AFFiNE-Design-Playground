@@ -14,12 +14,25 @@ console.log(useRoute.name);
     <ContentRenderer class="detailLayout" :value="doc" />
 
     <DetailToolBar @showDialog="setIsOpen(true)" :title="doc.title" />
-    <Dialog :isOpen="isOpen" @update:isOpen="setIsOpen(false)" />
   </ContentDoc>
+  <Dialog :isOpen="isOpen" @update:isOpen="setIsOpen(false)">
+    <ContentDoc
+      class="typeset"
+      :path="`${$router.currentRoute.value.fullPath}info`"
+    />
+  </Dialog>
 </template>
 <style>
 .detailLayout {
   width: 100vw;
   height: 100vh;
+}
+
+/*  */
+.typeset {
+  width: 100%;
+  height: 90%;
+  overflow: scroll;
+  padding: 16px;
 }
 </style>
