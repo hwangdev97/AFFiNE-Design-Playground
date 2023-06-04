@@ -9,10 +9,6 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    IFa6SolidArrowLeft: typeof import('~icons/fa6-solid/arrow-left')['default']
-    IFa6SolidArrowRight: typeof import('~icons/fa6-solid/arrow-right')['default']
-    IFa6SolidCode: typeof import('~icons/fa6-solid/code')['default']
-    IFa6SolidXmark: typeof import('~icons/fa6-solid/xmark')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
