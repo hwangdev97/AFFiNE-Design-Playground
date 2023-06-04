@@ -26,5 +26,5 @@ export default defineNuxtConfig({
       Icons(),
     ],
   },
-  extends: '@nuxt-themes/typography',
+  // extends: '@nuxt-themes/typography',
 });
