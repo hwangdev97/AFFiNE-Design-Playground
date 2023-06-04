@@ -16,7 +16,7 @@ const showInstall: Ref<Boolean> = ref(false);
           <span class="halo" aria-hidden="true"></span>
 
           <div v-if="showInstall" class="installLabel">
-            <img class="icon" src="../../assets/rotate-ccw.svg" alt="Restart" />
+            <img class="icon" src="../../../assets/rotate-ccw.svg" alt="Restart" />
             <span class="label2">Restart to install update</span>
           </div>
 
@@ -27,7 +27,7 @@ const showInstall: Ref<Boolean> = ref(false);
         </button>
 
         <button class="baseButton addPageButton" aria-label="Add page button">
-          <img class="icon" src="../../assets/Plus.svg" alt="add" />
+          <img class="icon" src="../../../assets/Plus.svg" alt="add" />
           <span>Add page</span>
         </button>
       </div>
@@ -37,7 +37,7 @@ const showInstall: Ref<Boolean> = ref(false);
 
 <style>
 :root {
-  --svg-animation: url("../../assets/dotAnimation.svg");
+  --svg-animation: url("../../../assets/dotAnimation.svg");
   --svg-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.25' numOctaves='10' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 button {
