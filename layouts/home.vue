@@ -49,6 +49,7 @@ const prototypeList = ref<ProtoTypeItem[]>([
     ),
     linear-gradient(90deg, rgba(0, 0, 0, 0.015) 0.1em, transparent 0.1em);
   background-size: 1rem 1rem;
+  overflow: hidden;
 }
 
 .prototypeGridLayout {

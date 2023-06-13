@@ -26,6 +26,7 @@ console.log(useRoute.name);
 .detailLayout {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 /*  */
