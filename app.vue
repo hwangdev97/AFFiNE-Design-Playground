@@ -22,4 +22,10 @@ body {
   padding: 0px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.document-driven-page {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 </style>

@@ -10,22 +10,24 @@ useContentHead(page);
 console.log(useRoute.name);
 </script>
 <template>
-  <ContentDoc class="detailLayout" v-slot="{ doc }">
-    <ContentRenderer class="detailLayout" :value="doc" />
+  <div class="detailLayout">
+    <ContentDoc v-slot="{ doc }">
+      <ContentRenderer class="detailLayout" :value="doc" />
 
-    <DetailToolBar @showDialog="setIsOpen(true)" :title="doc.title" />
-  </ContentDoc>
-  <Dialog :isOpen="isOpen" @update:isOpen="setIsOpen(false)">
-    <ContentDoc
-      class="typeset"
-      :path="`${$router.currentRoute.value.fullPath}info`"
-    />
-  </Dialog>
+      <DetailToolBar @showDialog="setIsOpen(true)" :title="doc.title" />
+    </ContentDoc>
+    <Dialog :isOpen="isOpen" @update:isOpen="setIsOpen(false)">
+      <ContentDoc
+        class="typeset"
+        :path="`${$router.currentRoute.value.fullPath}info`"
+      />
+    </Dialog>
+  </div>
 </template>
 <style>
 .detailLayout {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 

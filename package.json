@@ -11,9 +11,10 @@
   "devDependencies": {
     "@iconify/json": "^2.2.71",
     "@nuxt-themes/typography": "^0.11.0",
-    "@nuxt/content": "^2.6.0",
+    "@nuxt/content": "^2.7.0",
+    "@nuxt/devtools": "^0.6.4",
     "@types/node": "^18",
-    "nuxt": "^3.4.3",
+    "nuxt": "^3.6.0",
     "unplugin-icons": "^0.16.1",
     "unplugin-vue-components": "^0.25.0"
   },

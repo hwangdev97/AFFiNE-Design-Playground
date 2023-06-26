@@ -18,6 +18,12 @@ const prototypeList = ref<ProtoTypeItem[]>([
     route: "/prototype/updatebutton",
     video: "/video/update-button.mp4",
   },
+  {
+    title: "Zoom Filter Tab",
+    subscribe: "Tab Demo with Zoom Filter animation",
+    route: "/prototype/zoomfiltertab",
+    video: "/video/update-button.mp4",
+  },
 ]);
 </script>
 <template>
@@ -58,7 +64,6 @@ const prototypeList = ref<ProtoTypeItem[]>([
   grid-gap: 20px;
   grid-template-rows: masonry;
   padding: 3rem 6rem;
-    
 }
 
 .title {
@@ -132,7 +137,6 @@ a {
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 1.5rem;
     padding: 1rem 0.75rem;
-    
   }
 
   .title {
