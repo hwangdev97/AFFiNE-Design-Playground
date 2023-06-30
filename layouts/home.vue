@@ -18,6 +18,12 @@ const prototypeList = ref<ProtoTypeItem[]>([
     route: "/prototype/updatebutton",
     video: "/video/update-button.mp4",
   },
+  {
+    title: "Edgeless Toolbar",
+    subscribe: "New Edgeless Toolbar",
+    route: "/prototype/edgelesstoolbar",
+    video: "/video/update-button.mp4",
+  },
 ]);
 </script>
 <template>
@@ -166,5 +172,6 @@ a {
     height: 24px;
     margin: 0 0.2rem;
   }
+  
 }
 </style>
