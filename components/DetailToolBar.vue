@@ -102,7 +102,7 @@ const props = defineProps({
 
 @keyframes toolBarAppear {
   0% {
-    bottom: -5vh;
+    bottom: 4vh;
     transform: scale(0.7);
   }
   100% {
