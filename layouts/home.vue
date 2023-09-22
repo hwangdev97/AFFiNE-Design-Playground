@@ -4,25 +4,31 @@ const prototypeList = ref<ProtoTypeItem[]>([
     title: "Edgeless Shape",
     subscribe: "Edgeless Shape Button Demo",
     route: "/prototype/edgelessshape",
-    video: "/video/edgeless-shape.mp4",
+    cover: "/video/edgeless-shape.mp4",
   },
   {
     title: "Split Page",
     subscribe: "Split Page Demo with groovy animation",
     route: "/prototype/splitpage",
-    video: "/video/split-page.mp4",
+    cover: "/video/split-page.mp4",
   },
   {
     title: "Update Button",
     subscribe: "Update Button Demo with background animation",
     route: "/prototype/updatebutton",
-    video: "/video/update-button.mp4",
+    cover: "/video/update-button.mp4",
   },
   {
     title: "Edgeless Toolbar",
     subscribe: "New Edgeless Toolbar",
     route: "/prototype/edgelesstoolbar",
-    video: "/video/update-button.mp4",
+    cover: "/images/toolbar.png",
+  },
+  {
+    title: "Launch Screen",
+    subscribe: "When no workspace, show this window",
+    route: "/prototype/workspacelaunchscreen",
+    cover: "/images/toolbar.png",
   },
 ]);
 </script>

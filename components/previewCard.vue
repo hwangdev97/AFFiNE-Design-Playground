@@ -1,20 +1,21 @@
 <script lang="ts" setup>
-defineProps<{
+
+const props = defineProps<{
   item: ProtoTypeItem;
 }>();
+
+const isVideo = computed(() => {
+  return props.item.cover.endsWith(".mp4");
+});
+
 </script>
 <template>
   <NuxtLink :to="item.route">
     <div class="previewCardLayout">
       <!-- playsinline -->
-      <video
-        class="previewCardVideo"
-        :src="item.video"
-        autoplay
-        playsinline
-        muted
-        loop
-      ></video>
+
+      <video class="previewCardVideo" :src="item.cover" autoplay playsinline muted loop v-if="isVideo"></video>
+      <img class="previewCardVideo"  :src="item.cover" v-else />
       <div class="previewCardMeta">
         <div>
           <div class="previewCardTitle">{{ item.title }}</div>
@@ -74,6 +75,7 @@ a {
   text-align: left;
   user-select: none;
 }
+
 .previewCardVideo {
   width: 100%;
   height: 100%;
@@ -86,6 +88,7 @@ a {
   justify-items: center;
   padding: 10px;
 }
+
 .previewCardAction {
   display: flex;
   justify-items: center;
@@ -109,6 +112,7 @@ a {
   0% {
     transform: scale(0.85);
   }
+
   100% {
     transform: scale(1);
   }

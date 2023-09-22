@@ -20,13 +20,14 @@
     </div>
   </div>
 </template>
-<style>
+<style scoped>
 .background {
   width: 100%;
   height: 100%;
   background-image: url("/WStW2U7iLPY-full.jpeg");
   background-size: cover;
 }
+
 .splitPage {
   width: 80%;
   height: 80%;
@@ -73,11 +74,14 @@
   margin: 18px;
   background-color: var(--page-color);
   filter: blur(6px);
-  animation-name: split; /* 使用 move 序列 */
+  animation-name: split;
+  /* 使用 move 序列 */
   animation-duration: 1.5s;
-  animation-timing-function: ease-in-out; /* 缓动函数为 ease-in-out */
+  animation-timing-function: ease-in-out;
+  /* 缓动函数为 ease-in-out */
   animation-iteration-count: 1;
 }
+
 .pageTwoGooey {
   background-color: var(--page-color);
   width: 30px;
@@ -87,9 +91,12 @@
   top: calc(0% + 30px);
   left: 10px;
   z-index: 10000;
-  animation-name: move; /* 使用 move 序列 */
-  animation-duration: 2s; /* 持续时间为 2 秒 */
-  animation-timing-function: ease-in-out; /* 缓动函数为 ease-in-out */
+  animation-name: move;
+  /* 使用 move 序列 */
+  animation-duration: 2s;
+  /* 持续时间为 2 秒 */
+  animation-timing-function: ease-in-out;
+  /* 缓动函数为 ease-in-out */
   animation-iteration-count: 1;
 }
 
@@ -102,9 +109,12 @@
   top: 30%;
   left: 10px;
   z-index: 10000;
-  animation-name: move; /* 使用 move 序列 */
-  animation-duration: 2s; /* 持续时间为 2 秒 */
-  animation-timing-function: ease-in-out; /* 缓动函数为 ease-in-out */
+  animation-name: move;
+  /* 使用 move 序列 */
+  animation-duration: 2s;
+  /* 持续时间为 2 秒 */
+  animation-timing-function: ease-in-out;
+  /* 缓动函数为 ease-in-out */
   animation-iteration-count: 1;
 }
 
@@ -117,9 +127,12 @@
   bottom: calc(0% + 10px);
   left: 10px;
   z-index: 10000;
-  animation-name: move; /* 使用 move 序列 */
-  animation-duration: 2s; /* 持续时间为 2 秒 */
-  animation-timing-function: ease-in-out; /* 缓动函数为 ease-in-out */
+  animation-name: move;
+  /* 使用 move 序列 */
+  animation-duration: 2s;
+  /* 持续时间为 2 秒 */
+  animation-timing-function: ease-in-out;
+  /* 缓动函数为 ease-in-out */
   animation-iteration-count: 1;
 }
 
@@ -128,10 +141,13 @@
 }
 
 @keyframes move {
+
   /* 初始状态 */
   0% {
-    transform: translateX(-50px); /* X 轴位移为 0 */
+    transform: translateX(-50px);
+    /* X 轴位移为 0 */
   }
+
   /* 结束状态 */
   100% {
     transform: translateX(10px);
@@ -142,8 +158,8 @@
   from {
     margin-left: -20px;
   }
+
   to {
     margin-left: 20px;
   }
-}
-</style>
+}</style>
