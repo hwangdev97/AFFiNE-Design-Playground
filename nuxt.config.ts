@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   modules: [
     "@vueuse/nuxt",
     "@nuxt/content",
+    '@unocss/nuxt',
     [
       "unplugin-icons/nuxt",
       {
@@ -27,4 +28,12 @@ export default defineNuxtConfig({
     ],
   },
   // extends: '@nuxt-themes/typography',
+
+  runtimeConfig: {
+    public: {
+      FIGMA_TOKEN: process.env.FIGMA_TOKEN,
+      NODE_ENV: process.env.NODE_ENV,
+ 
+    },
+  },
 });

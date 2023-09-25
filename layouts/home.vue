@@ -1,6 +1,12 @@
 <script lang="ts" setup>
 const prototypeList = ref<ProtoTypeItem[]>([
   {
+    title: "Figma API Demo",
+    subscribe: "Test for Figma API's demo",
+    route: "/prototype/figmaapidemo",
+    cover: "/images/toolbar.png",
+  },
+  {
     title: "Edgeless Shape",
     subscribe: "Edgeless Shape Button Demo",
     route: "/prototype/edgelessshape",
@@ -55,10 +61,8 @@ const prototypeList = ref<ProtoTypeItem[]>([
   height: 100vh;
   width: 100vw;
   background: #ffffff;
-  background-image: linear-gradient(
-      rgba(0, 0, 0, 0.015) 0.1em,
-      transparent 0.1em
-    ),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.015) 0.1em,
+      transparent 0.1em),
     linear-gradient(90deg, rgba(0, 0, 0, 0.015) 0.1em, transparent 0.1em);
   background-size: 1rem 1rem;
   overflow: hidden;
@@ -70,7 +74,7 @@ const prototypeList = ref<ProtoTypeItem[]>([
   grid-gap: 20px;
   grid-template-rows: masonry;
   padding: 3rem 6rem;
-    
+
 }
 
 .title {
@@ -144,7 +148,7 @@ a {
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 1.5rem;
     padding: 1rem 0.75rem;
-    
+
   }
 
   .title {
@@ -178,6 +182,6 @@ a {
     height: 24px;
     margin: 0 0.2rem;
   }
-  
+
 }
 </style>
